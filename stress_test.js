@@ -42,14 +42,14 @@ export default function () {
 
     let resultPaasResult = http.get(resultPaas);
     check(resultPaasResult, {
-        'Poll PaaS: Status 200': (r) => r.status === 200,
+        'result PaaS: Status 200': (r) => r.status === 200,
         'Poll PaaS: Response time < 200ms': (r) => r.timings.duration < 200,
     });
 
     let resultIaasResult = http.get(resultIaas);
     check(resultIaasResult, {
-        'Poll IaaS: Status 200': (r) => r.status === 200,
-        'Poll IaaS: Response time < 200ms': (r) => r.timings.duration < 200,
+        'result IaaS: Status 200': (r) => r.status === 200,
+        'result IaaS: Response time < 200ms': (r) => r.timings.duration < 200,
     });
 
     sleep(1);
